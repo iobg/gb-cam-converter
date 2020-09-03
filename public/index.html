@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Upload Images to Server</title>
+    <title>Gameboy Camera Converter idk</title>
     <meta charset="utf-8">
     
 </head>
 <body>
 
-<h1>Upload Image</h1>
+<h3>Convert Image</h3>
  
-<form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" accept="image/*" name="photo" >
-        <input type="submit" value="upload">
+<form action="/upload" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="photo"> <br> <br>
+    <label for ="scale"> Scale </label>
+    <input type="number" class="form-control" placeholder="500" name="scale">
+    <label for ="xpx"> Width </label>
+    <input type="number" class="form-control" placeholder="128" name="xpx">
+    <label for ="ypx"> Height </label>
+    <input type="number" class="form-control" placeholder="112" name="ypx">
+    <input type="submit" value="Gamer Time" class="btn btn-default">            
+  </div>
 </form>
-            
 
 </body>
 </html>
