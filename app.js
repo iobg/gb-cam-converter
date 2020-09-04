@@ -32,7 +32,7 @@ app.post('/upload', upload.single('photo'), async (req, res) => {
 
 
 const convertImage = async (filePath, params) => {
-	let scale = params.scale ? params.scale : 500;
+	let scale = params.scale ? params.scale : 100;
 	let width = params.xpx ? params.xpx : 128;
 	let height = params.ypx ? params.ypx : 112;
 
@@ -47,6 +47,6 @@ const convertImage = async (filePath, params) => {
 
 }
 
-const server = awsServerlessExpress.createServer(app, null, ['multipart/form-data', 'image/png'])
+const server = awsServerlessExpress.createServer(app, null, ['multipart/form-data', 'image/png', '*/*'])
 
 exports.handler = (event, context) => { awsServerlessExpress.proxy(server, event, context) }
